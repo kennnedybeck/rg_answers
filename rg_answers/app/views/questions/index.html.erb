@@ -1,0 +1,93 @@
+<h2>RG! Questions</h2>
+ 
+<% @questions.each do |single_question| %>
+  <strong><%= single_question.name %></strong><br />
+  <%= single_question.reason %><br />
+  <%= link_to "Edit", edit_question_path(single_question) %>
+  <hr>
+<% end %>
+<!DOCTYPE html>
+<html lang="en">
+ <div class="container">
+ <div class="hero-unit">
+
+  <h1>RG! Answers</h1>
+  <p>Got a question?  Get the best answers!</p>
+  <p><%= link_to "Ask a Question", new_question_url, :class => "btn btn-primary" %></p>
+</div>
+ </div>
+ <div class="container">
+  <span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>
+<table class="table table-striped">
+  <thead>
+    <th>Question</th>
+    <th>Actions</td>
+  </thead>
+  <tbody>
+    <% @questions.each do |single_question| %>
+      <tr>
+        <td>
+          <strong><%= link_to single_question.name, question_path(single_question) %></strong><br />
+          <%= single_question.reason %><br />
+          <strong>Top Answer:</strong> <%= single_question.top_answer %>
+  <div class="col-lg-6">
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><%= link_to "Edit", edit_question_path(single_question) %></li>
+          <li><%= link_to 'Destroy', single_question, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+      <input type="text" class="form-control" aria-label="This is for new questions">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+        </td>
+        <td>
+          <%= link_to "Edit", edit_question_path(single_question) %>
+          <%= link_to 'Destroy', single_question, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+      <input type="text" class="form-control" aria-label="...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="...">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+</div>
+</html>
