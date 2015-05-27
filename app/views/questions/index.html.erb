@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<h2>RG! Questions</h2>
+ 
+<table class="table table-stripped">
+<thead>
+<th>Question</th>
+<th>Answers</th>
+<th>Actions</th>
+</thead>
+<tbody>
+<% @questions.each do |single_question| %>
+  <tr>
+    <td>
+      <%= link_to single_question.name, question_path(single_question) %> - 
+<%= single_question.reason %><br />
+    </td>
+    <td><%= single_question.display_answer %></td>
+      <td>
+        <%= link_to "Edit", edit_question_path(single_question) %>
+        <%= link_to 'Destroy', single_question, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+
+ 
