@@ -2,10 +2,7 @@ class Question < ActiveRecord::Base
   has_many :answers
 
   def display_answer
-  	self.answers.each do | answer |
-  		answer.description
-  		answer.votes
-  	end	
+  	self.answers 
   end
   		
   #def top_answer
