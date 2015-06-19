@@ -2,7 +2,7 @@
 <p><%= @question.reason %></p>
 
 <% @question.answers.each do |single_answer| %>
-  <strong>This answer has <%= single_answer.votes %> votes.</strong><br />
+  
   Like this answer?  <%= button_to "Vote +1", vote_question_answer_path(@question.id, single_answer.id) %>
   <p><%= single_answer.description %></p>
   <hr>

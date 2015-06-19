@@ -3,6 +3,7 @@ Rails.application.routes.draw do
       resources :answers do
       member do
         post :vote
+        post :description
       end
     end
   end

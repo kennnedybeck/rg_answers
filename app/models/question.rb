@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
 
   def print_answer
     self.answers.each do |answer|
-       '#{answer[:description]}'
+       "hello" 
     end
   end
 end
