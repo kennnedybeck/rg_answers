@@ -8,20 +8,20 @@
   <th>Actions</th>
   </thead>
   <tbody>
-  <% @questions.each do |single_question| %>
+  <% @questions.each do |question| %>
     <tr>
       <td>
-        <%= link_to single_question.name, question_path(single_question) %> - 
+        <%= link_to question.name, question_path(question) %> - 
       </td>
 	<td>
-	  <%= single_question.reason %><br />
+	  <%= question.reason %><br />
       </td>
 	<td>
-	<% single_question.print_answer %>
+	<% question.print_answer %>
 	</td> 
         <td>
-          <%= link_to "Edit", edit_question_path(single_question) %>
-          <%= link_to 'Destroy', single_question, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to "Edit", edit_question_path(question) %>
+          <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
 	<td>
 	  <%= link_to "New", new_question_path() %>
