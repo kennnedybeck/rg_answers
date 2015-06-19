@@ -1,7 +1,7 @@
 class Answer < ActiveRecord::Base
  
   belongs_to :question
-
+  scope :by_votes, :order => "votes DESC"
 
   def users_comments
     questions = Question.includes(answers: [:description]).all
