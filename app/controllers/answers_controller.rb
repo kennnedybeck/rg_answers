@@ -1,4 +1,7 @@
  class AnswersController < ApplicationController
+	def index
+		@answers = Answer.all
+	end	
 	def create
     		@question = Question.find(params[:question_id])
     		@answer = @question.answers.new(params_answer)
