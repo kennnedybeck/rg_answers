@@ -17,7 +17,8 @@
 	  <%= question.reason %><br />
       </td>
 	<td>
-	<% question.answer %>
+	<%= single_question.reason %><br />
+          <strong>Top Answer:</strong> <%= single_question.top_answer %>
 	</td> 
         <td>
           <%= link_to "Edit", edit_question_path(question) %>
