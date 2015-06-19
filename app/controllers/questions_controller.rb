@@ -25,11 +25,11 @@ class QuestionsController < ApplicationController
     	end
   	end	
   	def show
-    	@question = Question.find(question_id)
+    		@question = Question.find(question_id)
   	end
 	def destroy
-    	@question = Question.find(question_id)
-    	@question.destroy
+    		@question = Question.find(question_id)
+    		@question.destroy
     	redirect_to questions_url
   	end
 private 
